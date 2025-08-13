@@ -7,6 +7,7 @@
 #' @template object
 #' @template bucket
 #' @param compress A logical. See \code{\link[base]{saveRDS}}
+#' @param tx2gene A conversion table transcript to gene . See \code{\link[base]{tximport}} for more information. 
 #' @template dots
 #'
 #' @details Note that early versions of \code{s3saveRDS} from aws.s3 <= 0.2.4 unintentionally serialized objects to big endian format (due to defaults in \code{\link[base]{serialize}}. This can create problems when attempting to read these files using \code{\link[base]{readRDS}}. The function attempts to catch the issue and read accordingly, but may fail. The solution used internally is \code{unserialize(memDecompress(get_object(), "gzip"))}
